@@ -36,6 +36,7 @@ print(tabela)
 tabela = pd.read_csv("visitas.csv")
 
 st.sidebar.write("## Cadastrar visita")
+
 data = st.sidebar.date_input("Data")
 
 hora = st.sidebar.time_input("Hora")
@@ -54,7 +55,9 @@ funcionario = st.sidebar.selectbox("Funcionário", funcionarios)
 
 obs = st.sidebar.text_area("Observações")
 
-botao = st.sidebar.button("Cadastrar visita")
+limpeza = st.sidebar.checkbox("Limpeza realizada?")
+
+#botao = st.sidebar.button("Cadastrar visita")
 
 # Passo 3: Salvar a visita na base de dados
 if botao:
