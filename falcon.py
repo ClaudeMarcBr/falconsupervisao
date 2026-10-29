@@ -31,7 +31,10 @@ from zoneinfo import ZoneInfo
 agora = datetime.now(ZoneInfo("America/Sao_Paulo"))
 
 
-
+st.write(
+    "Teste horário de São Paulo:",
+    datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%d/%m/%Y %H:%M")
+)
 
 
 
@@ -80,8 +83,8 @@ from zoneinfo import ZoneInfo
 agora = datetime.now(ZoneInfo("America/Sao_Paulo"))
 
 valores_iniciais = {
-    "data": agora.date(),   
-    "hora": agora.time().replace(second=0, microsecond=0),
+    "Data": agora.date(),   
+    "Hora": agora.time().replace(second=0, microsecond=0),
     "supervisor": "Selecione o supervisor",
     "condo": "Selecione o condomínio",
     "colaborador1": "Selecione o colaborador",
@@ -201,8 +204,8 @@ def cadastrar_visita():
 
 # 5. Preparar os dados da nova visita
     nova_visita = [
-        datetime.now(ZoneInfo("America/Sao_Paulo")).date(),
-        datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%H:%M"),
+        st.session_state["Data"],
+        st.session_state["Hora"].strftime("%H:%M"),
         st.session_state.supervisor,
         st.session_state.condo,
         st.session_state.colaborador1,
