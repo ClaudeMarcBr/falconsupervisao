@@ -20,7 +20,21 @@ import plotly.express as px
 # carregar a localidade brasileira para ordenação correta de strings
 import locale
 # configurar o jogo de caracteres para português do Brasil
-locale.setlocale(locale.LC_COLLATE, "pt_BR.UTF-8")
+try:
+    locale.setlocale(locale.LC_COLLATE, "pt_BR.UTF-8")
+except locale.Error:
+    locale.setlocale(locale.LC_COLLATE, "C")
+
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
+agora = datetime.now(ZoneInfo("America/Sao_Paulo"))
+
+
+
+
+
+
 
 #Passo 1: montar a tela do sistema
 st.write("## Sistema de Visitas de supervisão da Falcon")
@@ -62,7 +76,8 @@ print(tabela)
 
 # incialzar atributos e carregar banco de dados
 from datetime import datetime
-agora = datetime.now()
+from zoneinfo import ZoneInfo
+agora = datetime.now(ZoneInfo("America/Sao_Paulo"))
 
 valores_iniciais = {
     "data": agora.date(),   
@@ -186,8 +201,8 @@ def cadastrar_visita():
 
 # 5. Preparar os dados da nova visita
     nova_visita = [
-        st.session_state.data,
-        st.session_state.hora,
+        datetime.now(ZoneInfo("America/Sao_Paulo")).date(),
+        datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%H:%M"),
         st.session_state.supervisor,
         st.session_state.condo,
         st.session_state.colaborador1,
