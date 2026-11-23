@@ -1,2 +1,32 @@
 Data,Hora,Supervisor,Condominio,Colaborador1,Funcao1,Colaborador2,Funcao2,Observacoes,Limpeza,LimpezaProduto,LimpezaCronograma,LimpezaCondominio,LimpezaPortaria,Uniforme,FolhaPonto,Cracha,Pendencias,UniformeCondicoes,BarbaFeita
 2026-11-05,09:55,Daniel,Estrela do Mar,Carmen,Faxineiro/a,Laura,Faxineiro/a,,Sim,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-05,12:03,André,Bela Vista,Laura,Faxineiro/a,Carmen,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,12:57,André,Estrela do Mar,Mario,Manobrista,Isabela,Faxineiro/a,,Sim,Não,Sim,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,12:57,Claude,Bela Vista,Mario,Faxineiro/a,Carmen,Faxineiro/a,,Sim,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,13:19:00,André,Blue Lagoon,Isabela,Manobrista,Carmen,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,13:22,André,Estrela do Mar,Carmen,Manobrista,Cristina,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,13:22,André,Blue Lagoon,Cristina,Faxineiro/a,Mario,Zelador/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,13:35,André,Bela Vista,Cristina,Manobrista,Luzia,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,13:44,André,Bela Vista,Carmen,Faxineiro/a,Isabela,Porteiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,13:44,André,Bela Vista,Carmen,Faxineiro/a,Carmen,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:12,André,Bela Vista,Carmen,Faxineiro/a,Carmen,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:16,André,Bela Vista,Carmen,Faxineiro/a,Carmen,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:16,André,Estrela do Mar,Cristina,Manobrista,Carmen,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:23,André,Bela Vista,Carmen,Faxineiro/a,Cristina,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:23,André,Bela Vista,Carmen,Faxineiro/a,Laura,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:27,André,Bela Vista,Carmen,Faxineiro/a,Carmen,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:27,André,Blue Lagoon,Cristina,Manobrista,Laura,Porteiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:27,Daniel,Bela Vista,Carmen,Manobrista,Isabela,Porteiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:35,André,Bela Vista,Carmen,Faxineiro/a,Luzia,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:36,André,Bela Vista,Carmen,Faxineiro/a,Cristina,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:38,André,Bela Vista,Carmen,Faxineiro/a,Cristina,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:39,André,Bela Vista,Carmen,Faxineiro/a,Carmen,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:40,Claude,Bela Vista,Cristina,Faxineiro/a,Laura,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:42,Claude,Maravilhoso,Cristina,Manobrista,Luzia,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:43,André,Blue Lagoon,Cristina,Porteiro/a,Laura,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:44,Claude,Bela Vista,Cristina,Faxineiro/a,Carmen,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:45,André,Estrela do Mar,Cristina,Porteiro/a,Mario,Porteiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:46,Daniel,Blue Lagoon,Laura,Porteiro/a,Laura,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,14:57,Claude,Bela Vista,Cristina,Manobrista,Isabela,Manobrista,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-20,15:32,Claude,Blue Lagoon,Isabela,Porteiro/a,Isabela,Porteiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não
+2026-11-23,14:52,André,Blue Lagoon,Laura,Faxineiro/a,Mario,Faxineiro/a,,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não,Não

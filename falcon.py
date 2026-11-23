@@ -1,4 +1,7 @@
-#Copyright (c) 2026 Claude Païssé
+
+
+
+#Copyright (c) 10/2026 Claude Païssé
 #Programa experimental de entrada de ronda para Daniel da Falcon
 # Passo a passo do projeto
     # Passo 1: Criar a tela do sistema
@@ -8,7 +11,7 @@
     # Passo 5: Criar o dashboard com os gráficos
     # Incluir controle de acesso para que apenas supervisores possam cadastrar visitas
 
-#requerimentos
+#requerimentos do sistema
 # carregar comandos do MAC
 import os
 # carregar comandos do Streamlit para deploy
@@ -25,26 +28,15 @@ try:
 except locale.Error:
     locale.setlocale(locale.LC_COLLATE, "C")
 
-from datetime import datetime
-from zoneinfo import ZoneInfo
+#Passo 1: montar a tela do sistema com o logo da Falcon e o título do sistema
+st.image("Logo_Falcon.png", width=250)
 
-agora = datetime.now(ZoneInfo("America/Sao_Paulo"))
-
-
-st.write(
-    "Teste horário de São Paulo:",
-    datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%d/%m/%Y %H:%M")
-)
-
-
-
-
-#Passo 1: montar a tela do sistema
 st.write("## Sistema de Visitas de supervisão da Falcon")
 st.markdown(
     '<h4 style="margin-left: 40px;">by Claude Païssé  © 2026',
     unsafe_allow_html=True
 )
+
 # Passo 2: Criar o formulário de cadastro e, se aruivo não existe, criar um arquivo csv com as colunas
 arquivo = "visitas.csv"
 colunas = ["Data",
@@ -68,6 +60,7 @@ colunas = ["Data",
            "UniformeCondicoes",
            "BarbaFeita"
 ]
+
 if os.path.exists(arquivo):
     tabela = pd.read_csv(arquivo)
     print("Arquivo existente carregado.")
@@ -78,13 +71,8 @@ else:
 print(tabela)
 
 # incialzar atributos e carregar banco de dados
-from datetime import datetime
-from zoneinfo import ZoneInfo
-agora = datetime.now(ZoneInfo("America/Sao_Paulo"))
 
 valores_iniciais = {
-    "Data": agora.date(),   
-    "Hora": agora.time().replace(second=0, microsecond=0),
     "supervisor": "Selecione o supervisor",
     "condo": "Selecione o condomínio",
     "colaborador1": "Selecione o colaborador",
@@ -113,22 +101,24 @@ tabela = pd.read_csv("visitas.csv")
 #permitir entrada das informações do formulário de cadastro de visitas na barra lateral
 #colunas: Data,Hora,Supervisor,Condomninio,Funcionario,Observacoes,LimpezaProduto,LimpezaCronograma,LimpezaCondominio(ronda),LimpezaPortaria,Uniforme,FolhaPonto,Cracha,Pendencias,UniformeCondicoes,BarbaFeita
 
-st.sidebar.write("## Cadastrar visita")
-data = st.sidebar.date_input("Data", key="Data")
-hora = st.sidebar.time_input("Hora", key="Hora")
+#st.sidebar.write("## Login")
 
-#selecionar o supervisor, de dentro de uma lista orednada alfabeticamente, com a primeira opção sendo "Selecione o supervisor"
-with open("Supervisores.txt", "r", encoding="utf-8") as arquivo:    
-    supervisores = [linha.strip() for linha in arquivo if linha.strip()]
-    supervisores = sorted(supervisores, key=str.casefold)
-    supervisor = st.sidebar.selectbox("Supervisor *", ["Selecione o supervisor"] + supervisores, key="supervisor")
+#supervisor_login = "Selecione o supervisor"
+#while supervisor_login == "Selecione o supervisor":
+#    with open("Supervisores.txt", "r", encoding="utf-8") as arquivo:    
+#        supervisores = [linha.strip() for linha in arquivo if linha.strip()]
+#        supervisores = sorted(supervisores, key=str.casefold)
+#        supervisor_login = st.sidebar.selectbox("Supervisor *", ["Selecione o supervisor"] + supervisores, key="supervisor_login")
+
+#supervisor = supervisor_login
+
+st.sidebar.write("## Cadastrar visita")
 
 #selecionar o condomínio, de dentro de uma lista ordenada alfabeticamente, com a primeira opção sendo "Selecione o condomínio"
 with open("Condominios.txt", "r", encoding="utf-8") as arquivo:
     condominios = [linha.strip() for linha in arquivo if linha.strip()]
     condominios = sorted(condominios, key=str.casefold)
     condo = st.sidebar.selectbox("Condomínio *", ["Selecione o condomínio"] + condominios, key="condo")
-
 #selecionar o colaborador, de dentro de uma lista ordenada alfabeticamente, com a primeira opção sendo "Selecione o funcionário"
 with open("Colaboradores.txt", "r", encoding="utf-8") as arquivo:
     colaboradores = [linha.strip() for linha in arquivo if linha.strip()]
@@ -138,7 +128,6 @@ with open("Funcoes.txt", "r", encoding="utf-8") as arquivo:
     funcoes = [linha.strip() for linha in arquivo if linha.strip()]
     funcoes = sorted(funcoes, key=str.casefold)
     funcao1 = st.sidebar.selectbox("Função colaborador 1 *", ["Selecione a função"] + funcoes, key="funcao1")
-
 with open("Colaboradores.txt", "r", encoding="utf-8") as arquivo:
     colaboradores = [linha.strip() for linha in arquivo if linha.strip()]
     colaboradores = sorted(colaboradores, key=str.casefold)
@@ -147,9 +136,7 @@ with open("Funcoes.txt", "r", encoding="utf-8") as arquivo:
     funcoes = [linha.strip() for linha in arquivo if linha.strip()]
     funcoes = sorted(funcoes, key=str.casefold)
     funcao2 = st.sidebar.selectbox("Função colaborador 2 *", ["Selecione a função"] + funcoes, key="funcao2")
-
 obs = st.sidebar.text_area("Observações", key="obs")
-
 limpeza = st.sidebar.radio("Limpeza realizada?", ["Não", "Sim"], horizontal=True, key="limpeza")
 limpezaproduto = st.sidebar.radio("Produtos de limpeza verificados?", ["Não", "Sim"], horizontal=True, key="limpezaproduto")
 limpezacronograma = st.sidebar.radio("Cronograma de limpeza verificado?", ["Não", "Sim"], horizontal=True, key="limpezacronograma")
@@ -203,9 +190,14 @@ def cadastrar_visita():
     tabela = pd.read_csv("visitas.csv")
 
 # 5. Preparar os dados da nova visita
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    agora = datetime.now(ZoneInfo("America/Sao_Paulo"))
+    Data=agora.date()
+    Hora=agora.time().replace(second=0, microsecond=0)
     nova_visita = [
-        st.session_state["Data"],
-        st.session_state["Hora"].strftime("%H:%M"),
+        Data,
+        Hora.strftime("%H:%M"),
         st.session_state.supervisor,
         st.session_state.condo,
         st.session_state.colaborador1,
@@ -228,25 +220,6 @@ def cadastrar_visita():
 
 # 6. Adicionar a visita e gravar o CSV
     
-    #INÍCIO DO DIAGNÓSTICO DO MISMATCH - A APAGAR NA VERSÃO FINAL
-    print("Colunas da tabela:", list(tabela.columns))
-    print("Quantidade de colunas:", len(tabela.columns))
-
-    print("Nova visita:", nova_visita)
-    print("Quantidade de valores:", len(nova_visita))
-    
-    print("\n--- DIAGNÓSTICO DO MISMATCH ---")
-
-    print("Colunas da tabela:", tabela.columns.tolist())
-    print("Número de colunas:", len(tabela.columns))
-
-    print("Nova visita:", nova_visita)
-    print("Tipo de nova_visita:", type(nova_visita))
-    print("Número de valores:", len(nova_visita))
-
-    print("--- FIM DO DIAGNÓSTICO ---")
-    #FIM DO DIAGOSTICO DO MISMATCH - A APAGAR NA VERSÃO FINAL
-
     tabela.loc[len(tabela)] = nova_visita
     tabela.to_csv("visitas.csv", index=False)
 
